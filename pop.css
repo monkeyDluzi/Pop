@@ -1,64 +1,121 @@
 body {
+  
+/* =========================
+   1. MAIN PAGE
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
   margin: 0;
   min-height: 100vh;
 
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  background-color: black;
+  background: radial-gradient(circle, #211038, #050208);
+  color: white;
+  font-family: Arial, sans-serif;
 }
+
+
+/* =========================
+   2. ALL BUTTONS
+========================= */
 
 button {
   background: #160d2b;
   color: #d9aaff;
+
   border: 2px solid #a855f7;
   border-radius: 12px;
+
   padding: 12px 25px;
+
   font-size: 18px;
   font-weight: bold;
+
   cursor: pointer;
+
   text-shadow: 0 0 8px #c084fc;
   box-shadow: 0 0 12px #9333ea;
+
   transition: 0.3s;
 }
 
 button:hover {
   background: #9333ea;
   color: white;
+
   box-shadow: 0 0 25px #c084fc;
+
   transform: scale(1.08);
 }
 
 
+/* =========================
+   3. WELCOME SCREEN
+========================= */
+
 #welcome {
   position: relative;
   isolation: isolate;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
+
   justify-content: center;
+  align-items: center;
+
   gap: 20px;
 
-  padding: 50px;
-  width: 400px;
-  max-width: calc(100vw - 80px);
+  width: min(450px, calc(100vw - 60px));
+  padding: 45px 25px;
 
   background: #100820;
+
   border: 2px solid white;
   border-radius: 20px;
+
+  box-shadow: 0 0 20px #7020b9;
 }
+
+
+/* =========================
+   4. WELCOME TITLE
+========================= */
+
+#hello {
+  color: white;
+
+  font-size: 36px;
+  text-align: center;
+
+  text-shadow: 0 0 10px #a855f7;
+}
+
+
+/* =========================
+   5. PARTICLE ACCELERATOR
+========================= */
 
 #welcome::before,
 #welcome::after {
   content: "";
+
   position: absolute;
   inset: -15px;
+
   border: 2px solid transparent;
+
   border-top-color: #a855f7;
   border-bottom-color: #9333ea;
+
   border-radius: 25px;
+
   pointer-events: none;
   z-index: -1;
 }
@@ -69,31 +126,78 @@ button:hover {
 
 #welcome::after {
   inset: -25px;
+
   border-top-color: #d8b4fe;
   border-bottom-color: #7e22ce;
+
   animation: spin 5s linear infinite reverse;
 }
+
+
+/* =========================
+   6. ANIMATION
+========================= */
 
 @keyframes spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
+
+/* =========================
+   7. DIFFICULTY MENU
+========================= */
+
 #diff {
   display: none;
+
   flex-direction: column;
   align-items: center;
+
   gap: 20px;
   padding: 40px;
+
+  background: #100820;
+
+  border: 2px solid #a855f7;
+  border-radius: 20px;
+
+  box-shadow: 0 0 20px #9333ea;
 }
 
-#hello {
+
+/* =========================
+   8. GAME ARENA
+========================= */
+
+#arena {
+  display: none;
+
+  width: 90vw;
+  height: 80vh;
+
+  position: relative;
+
+  border: 2px solid #a855f7;
+  border-radius: 20px;
+
+  background: #080510;
+
+  box-shadow: 0 0 20px #9333ea;
+}
+
+
+/* =========================
+   9. SCORE
+========================= */
+
+#score,
+#highScoreText {
   color: white;
-  font-size: 36px;
-  text-align: center;
-  text-shadow: 0 0 15px purple;
+  text-shadow: 0 0 10px #a855f7;
 }
